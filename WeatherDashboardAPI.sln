@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDashboardAPI", "WeatherDashboardAPI\WeatherDashboardAPI.csproj", "{C06EB692-8FB2-4496-8529-F2F64C845629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDashboardAPI.Domain", "WeatherDashboardAPI.Domain\WeatherDashboardAPI.Domain.csproj", "{E8ACB29F-093C-4538-84D1-B6FD6D2726EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDashboardAPI.Infraestructure", "WeatherDashboardAPI.Infraestructure\WeatherDashboardAPI.Infraestructure.csproj", "{3EE1215A-D395-4BAC-A3E1-1ABDF70DDC7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDashboardAPI.Application", "WeatherDashboardAPI.Application\WeatherDashboardAPI.Application.csproj", "{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{C06EB692-8FB2-4496-8529-F2F64C845629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C06EB692-8FB2-4496-8529-F2F64C845629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C06EB692-8FB2-4496-8529-F2F64C845629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8ACB29F-093C-4538-84D1-B6FD6D2726EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8ACB29F-093C-4538-84D1-B6FD6D2726EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8ACB29F-093C-4538-84D1-B6FD6D2726EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8ACB29F-093C-4538-84D1-B6FD6D2726EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE1215A-D395-4BAC-A3E1-1ABDF70DDC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE1215A-D395-4BAC-A3E1-1ABDF70DDC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE1215A-D395-4BAC-A3E1-1ABDF70DDC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE1215A-D395-4BAC-A3E1-1ABDF70DDC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
