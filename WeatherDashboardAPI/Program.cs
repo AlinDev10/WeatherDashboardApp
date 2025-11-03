@@ -11,7 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplication()
-                .AddInfraestructure();
+                .AddInfraestructure(
+                builder.Configuration.GetConnectionString("ConnectionString")!, 
+                builder.Configuration.GetConnectionString("DatabaseName")!);
 
 var app = builder.Build();
 
