@@ -11,18 +11,18 @@ namespace WeatherDashboardAPI.Infraestructure.Data
         {
         }
 
-        public DbSet<Users> Users { get; init; }
+        public DbSet<UserEntity> Users { get; init; }
 
-        public DbSet<WeatherHistory> WeatherHistory { get; init; }
+        public DbSet<WeatherHistoryEntity> WeatherHistory { get; init; }
 
-        public DbSet<FavoriteCities> FavoriteCities { get; init; }
+        public DbSet<FavoriteCitiesEntity> FavoriteCities { get; init; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Users>().ToCollection("users");
-            modelBuilder.Entity<WeatherHistory>().ToCollection("weather_history");
-            modelBuilder.Entity<FavoriteCities>().ToCollection("favorite_cities");
+            modelBuilder.Entity<UserEntity>().ToCollection("users");
+            modelBuilder.Entity<WeatherHistoryEntity>().ToCollection("weather_history");
+            modelBuilder.Entity<FavoriteCitiesEntity>().ToCollection("favorite_cities");
         }
     }
 }

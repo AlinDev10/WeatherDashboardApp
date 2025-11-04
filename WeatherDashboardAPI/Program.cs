@@ -1,4 +1,5 @@
 using WeatherDashboardAPI.Application;
+using WeatherDashboardAPI.Domain.Models;
 using WeatherDashboardAPI.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,10 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.Configure<MongoDBSettings>(
+    builder.Configuration.GetSection(MongoDBSettings.SectionName));
+
 builder.Services.AddApplication()
-                .AddInfraestructure(
-                builder.Configuration.GetConnectionString("ConnectionString")!, 
-                builder.Configuration.GetConnectionString("DatabaseName")!);
+                .AddInfraestructure();
 
 var app = builder.Build();
 

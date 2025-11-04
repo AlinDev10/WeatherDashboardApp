@@ -1,6 +1,6 @@
 @WeatherDashboardAPI_HostAddress = http://localhost:5287
 
-GET {{WeatherDashboardAPI_HostAddress}}/weatherforecast/
-Accept: application/json
+# GET {{WeatherDashboardAPI_HostAddress}}/weatherforecast/
+# Accept: application/json
 
 ###
