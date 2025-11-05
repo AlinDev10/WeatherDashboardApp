@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using MongoDB.Driver;
 using WeatherDashboardAPI.Domain.Interfaces;
 using WeatherDashboardAPI.Domain.Models;
 using WeatherDashboardAPI.Infraestructure.Data;
@@ -21,6 +19,8 @@ namespace WeatherDashboardAPI.Infraestructure
             });
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IWeatherHistoryRepository, WeatherHistoryRepository>();
+            services.AddScoped<IFavoriteCityRepository, FavoriteCityRepository>();
 
             return services;
         }

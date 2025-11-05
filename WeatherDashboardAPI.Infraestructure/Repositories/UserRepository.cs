@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
 using WeatherDashboardAPI.Domain.Entities;
 using WeatherDashboardAPI.Domain.Interfaces;
 using WeatherDashboardAPI.Infraestructure.Data;
 
 namespace WeatherDashboardAPI.Infraestructure.Repositories
 {
+
     public class UserRepository(AppDbContext dbContext) : IUserRepository
     {
         public async Task<IEnumerable<UserEntity>> GetUsersAsync() {
@@ -19,7 +21,7 @@ namespace WeatherDashboardAPI.Infraestructure.Repositories
 
         public async Task<UserEntity> AddUserAsync(UserEntity userEntity)
         {
-            userEntity.Id = Guid.NewGuid().ToString();
+            userEntity.Id = ObjectId.GenerateNewId().ToString();
             dbContext.Users.Add(userEntity);
 
             await dbContext.SaveChangesAsync();
@@ -46,7 +48,7 @@ namespace WeatherDashboardAPI.Infraestructure.Repositories
             var userFromDd = await dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
 
             if (userFromDd != null) { 
-                dbContext.Remove(userFromDd);
+                dbContext.Users.Remove(userFromDd);
                 return await dbContext.SaveChangesAsync() > 0;
             }
 

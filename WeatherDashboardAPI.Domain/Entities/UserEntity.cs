@@ -6,6 +6,7 @@ namespace WeatherDashboardAPI.Domain.Entities
     public class UserEntity
     {
         [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
         public string? UserName { get; set; }
