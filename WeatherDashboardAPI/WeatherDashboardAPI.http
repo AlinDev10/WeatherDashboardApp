@@ -1,6 +1,91 @@
-@WeatherDashboardAPI_HostAddress = http://localhost:5287
+@WeatherDashboardAPI_HostAddress = https://localhost:63658
 
-# GET {{WeatherDashboardAPI_HostAddress}}/weatherforecast/
-# Accept: application/json
+GET {{WeatherDashboardAPI_HostAddress}}/api/favoritecities
+
+###
+
+POST {{WeatherDashboardAPI_HostAddress}}/api/favoritecities
+Content-Type: application/json
+
+{
+  //FavoriteCitiesEntity
+}
+
+###
+
+PUT {{WeatherDashboardAPI_HostAddress}}/api/favoritecities
+Content-Type: application/json
+
+{
+  //FavoriteCitiesEntity
+}
+
+###
+
+DELETE {{WeatherDashboardAPI_HostAddress}}/api/favoritecities/{favoriteCityId}
+
+###
+
+GET {{WeatherDashboardAPI_HostAddress}}/api/favoritecities/{favoriteCityId}
+
+###
+
+GET {{WeatherDashboardAPI_HostAddress}}/api/users
+
+###
+
+POST {{WeatherDashboardAPI_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  //UserEntity
+}
+
+###
+
+PUT {{WeatherDashboardAPI_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  //UserEntity
+}
+
+###
+
+DELETE {{WeatherDashboardAPI_HostAddress}}/api/users/{userId}
+
+###
+
+GET {{WeatherDashboardAPI_HostAddress}}/api/users/{userId}
+
+###
+
+GET {{WeatherDashboardAPI_HostAddress}}/api/weatherhistories
+
+###
+
+POST {{WeatherDashboardAPI_HostAddress}}/api/weatherhistories
+Content-Type: application/json
+
+{
+  //WeatherHistoryEntity
+}
+
+###
+
+PUT {{WeatherDashboardAPI_HostAddress}}/api/weatherhistories
+Content-Type: application/json
+
+{
+  //WeatherHistoryEntity
+}
+
+###
+
+DELETE {{WeatherDashboardAPI_HostAddress}}/api/weatherhistories/{weatherHistoryId}
+
+###
+
+GET {{WeatherDashboardAPI_HostAddress}}/api/weatherhistories/{weatherHistoryId}
 
 ###
