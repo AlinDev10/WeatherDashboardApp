@@ -15,8 +15,4 @@
     <ProjectReference Include="..\WeatherDashboardAPI.Domain\WeatherDashboardAPI.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Queries\" />
-  </ItemGroup>
-
 </Project>
