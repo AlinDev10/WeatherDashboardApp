@@ -40,7 +40,7 @@ namespace WeatherDashboardAPI.Controllers
         }
 
         [HttpDelete("{favoriteCityId}")]
-        public async Task<IActionResult> DeleteUserAsync([FromRoute] string favoriteCityId)
+        public async Task<IActionResult> DeleteFavoriteCityAsync([FromRoute] string favoriteCityId)
         {
             var result = await sender.Send(new DeleteFavoriteCityCommand(favoriteCityId));
             return Ok(result);
