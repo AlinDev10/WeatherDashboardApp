@@ -19,7 +19,7 @@ namespace WeatherDashboardAPI.UnitTesting
         }
 
         [Fact]
-        public async Task GetUserByIdQuery_ReturnsNotFoundResult_WhenNoUserExists()
+        public async Task GetUserByIdAsync_ReturnsNotFoundResult_WhenNoUserExists()
         {
             // Arrange
             var id = "xxxx";
@@ -35,7 +35,7 @@ namespace WeatherDashboardAPI.UnitTesting
         }
 
         [Fact]
-        public async Task GetUserByIdQuery_ReturnsOkResult_WhenUserExists()
+        public async Task GetUserByIdAsync_ReturnsOkResult_WhenUserExists()
         {
             // Arrange
             var id = "690be55a9833df8b2f206bb3";
@@ -54,7 +54,7 @@ namespace WeatherDashboardAPI.UnitTesting
         }
 
         [Fact]
-        public async Task GetAllUsersQuery_ReturnsOkResult_WhenNoUserIdRequired()
+        public async Task GetAllUsersAsync_ReturnsOkResult_WhenNoUserIdRequired()
         {
             // Arrange
             var expectedResult = new List<UserEntity> { 
@@ -75,7 +75,7 @@ namespace WeatherDashboardAPI.UnitTesting
         }
 
         [Fact]
-        public async Task AddUserCommand_ReturnsBadRequestResult_WhenPassingDataInvalid()
+        public async Task AddUserAsync_ReturnsBadRequestResult_WhenPassingDataInvalid()
         {
             // Arrange
             var createItemRequest = new UserEntity
@@ -98,7 +98,7 @@ namespace WeatherDashboardAPI.UnitTesting
         }
 
         [Fact]
-        public async Task AddUserCommand_ReturnsOkResult_WhenNewUserIsNeeded()
+        public async Task AddUserAsync_ReturnsOkResult_WhenNewUserIsNeeded()
         {
             // Arrange
             var createItemRequest = new UserEntity { Id = "" , UserName = "NewUser" };
@@ -117,7 +117,7 @@ namespace WeatherDashboardAPI.UnitTesting
         }
 
         [Fact]
-        public async Task UpdateUserCommand_ReturnsOkResult_WhenDataModificationUserIsNeeded()
+        public async Task UpdateUserAsync_ReturnsOkResult_WhenDataModificationUserIsNeeded()
         {
             // Arrange
             var updateItemRequest = new UserEntity { Id = "690be55a9833df8b2f206bb3", UserName = "UpdateUser" };
@@ -136,7 +136,7 @@ namespace WeatherDashboardAPI.UnitTesting
         }
 
         [Fact]
-        public async Task DeleteUserCommand_ReturnsOkResult_WhenDeleteUserIsNeeded()
+        public async Task DeleteUserAsync_ReturnsOkResult_WhenDeleteUserIsNeeded()
         {
             // Arrange
             var idUserToDelete = "690be55a9833df8b2f206bb3";

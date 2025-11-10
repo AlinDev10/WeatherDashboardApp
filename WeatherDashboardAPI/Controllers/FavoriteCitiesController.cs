@@ -13,37 +13,79 @@ namespace WeatherDashboardAPI.Controllers
         [HttpPost("")]
         public async Task<IActionResult> AddFavoriteCityAsync([FromBody] FavoriteCitiesEntity favoriteCitiesEntity)
         {
-            var result = await sender.Send(new AddFavoriteCityCommand(favoriteCitiesEntity));
-            return Ok(result);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await sender.Send(new AddFavoriteCityCommand(favoriteCitiesEntity));
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
+            }
         }
 
         [HttpGet("")]
         public async Task<IActionResult> GetAllFavoriteCitiesAsync()
         {
-            var result = await sender.Send(new GetAllFavoriteCitiesQuery());
-            return Ok(result);
+            try
+            {
+                var result = await sender.Send(new GetAllFavoriteCitiesQuery());
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
+            }
         }
 
 
         [HttpGet("{favoriteCityId}")]
         public async Task<IActionResult> GetFavoriteCityByIdAsync([FromRoute] string favoriteCityId)
         {
-            var result = await sender.Send(new GetFavoriteCityByIdQuery(favoriteCityId));
-            return Ok(result);
+            try
+            {
+                var result = await sender.Send(new GetFavoriteCityByIdQuery(favoriteCityId));
+                return result != null ? Ok(result) : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
+            }
         }
 
         [HttpPut("")]
         public async Task<IActionResult> UpdateFavoriteCityAsync([FromBody] FavoriteCitiesEntity favoriteCitiesEntity)
         {
-            var result = await sender.Send(new UpdateFavoriteCityCommand(favoriteCitiesEntity));
-            return Ok(result);
+            try
+            {
+                var result = await sender.Send(new UpdateFavoriteCityCommand(favoriteCitiesEntity));
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
+            }
         }
 
         [HttpDelete("{favoriteCityId}")]
         public async Task<IActionResult> DeleteFavoriteCityAsync([FromRoute] string favoriteCityId)
         {
-            var result = await sender.Send(new DeleteFavoriteCityCommand(favoriteCityId));
-            return Ok(result);
+            try
+            {
+                var result = await sender.Send(new DeleteFavoriteCityCommand(favoriteCityId));
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
+            }
         }
     }
 }

@@ -25,11 +25,10 @@ namespace WeatherDashboardAPI.Controllers
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected internal server error occurred.");
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ",ex.Message));
             }
-            
         }
 
         [HttpGet("")]
@@ -40,9 +39,9 @@ namespace WeatherDashboardAPI.Controllers
                 var result = await sender.Send(new GetAllUsersQuery());
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected internal server error occurred.");
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
             }
         }
 
@@ -54,9 +53,9 @@ namespace WeatherDashboardAPI.Controllers
                 var result = await sender.Send(new GetUserByIdQuery(userId));
                 return result != null ? Ok(result) : NotFound();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected internal server error occurred.");
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
             }
         }
 
@@ -68,9 +67,9 @@ namespace WeatherDashboardAPI.Controllers
                 var result = await sender.Send(new UpdateUserCommand(userEntity));
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected internal server error occurred.");
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
             }
 
         }
@@ -83,9 +82,9 @@ namespace WeatherDashboardAPI.Controllers
                 var result = await sender.Send(new DeleteUserCommand(userId));
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected internal server error occurred.");
+                return StatusCode(500, string.Concat("An unexpected internal server error occurred: ", ex.Message));
             }
         }
     }
