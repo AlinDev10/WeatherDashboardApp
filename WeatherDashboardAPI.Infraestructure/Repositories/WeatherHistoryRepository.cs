@@ -22,7 +22,7 @@ namespace WeatherDashboardAPI.Infraestructure.Repositories
         {
             weatherHistoryEntity.Id = ObjectId.GenerateNewId().ToString();
             weatherHistoryEntity.SearchedAt = DateTime.UtcNow;
-            weatherHistoryEntity.WeatherData = weatherHistoryEntity.WeatherData; //Check Conversion to JSON object or string
+            weatherHistoryEntity.WeatherData = weatherHistoryEntity.WeatherData;
             dbContext.WeatherHistory.Add(weatherHistoryEntity);
 
             await dbContext.SaveChangesAsync();
@@ -38,7 +38,7 @@ namespace WeatherDashboardAPI.Infraestructure.Repositories
                 weatherHistoryFromDd.UserId = weatherHistoryEntity.UserId;
                 weatherHistoryFromDd.CityName = weatherHistoryEntity.CityName;
                 weatherHistoryFromDd.CountryCode = weatherHistoryEntity.CountryCode;
-                weatherHistoryFromDd.WeatherData = weatherHistoryEntity.WeatherData; //Check Conversion to JSON object or string
+                weatherHistoryFromDd.WeatherData = weatherHistoryEntity.WeatherData;
 
                 await dbContext.SaveChangesAsync();
                 return weatherHistoryFromDd;
