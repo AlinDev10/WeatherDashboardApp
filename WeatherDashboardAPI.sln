@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDashboardAPI.Infraes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDashboardAPI.Application", "WeatherDashboardAPI.Application\WeatherDashboardAPI.Application.csproj", "{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDashboardAPI.UnitTesting", "WeatherDashboardAPI.UnitTesting\WeatherDashboardAPI.UnitTesting.csproj", "{6816B078-C950-48B4-B986-36B6D83283F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA6DE4D0-EB53-45DC-84F0-00AF4A69111D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6816B078-C950-48B4-B986-36B6D83283F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6816B078-C950-48B4-B986-36B6D83283F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6816B078-C950-48B4-B986-36B6D83283F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6816B078-C950-48B4-B986-36B6D83283F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
