@@ -481,7 +481,7 @@ Or Open the Tests explorer window and run from there the stacks of unit test cre
 
 ## Environment variables required
 
-*Replace the value of "ConnectionString" variable with your connection string from Mongo DB clusters, link: https://cloud.mongodb.com/.
+*Replace the value of "ConnectionString" variable with your connection string from Mongo DB clusters, link: https://cloud.mongodb.com/. Located in the "appsettings.json" file in the solution "WeatherDashboardAPI.csproj"
 
 
 ## Database Schema from Mongo DB Diagram JSON representation
