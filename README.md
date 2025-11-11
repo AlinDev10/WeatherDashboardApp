@@ -23,7 +23,7 @@ Then,to start a local development server, run:
 Once the server is running, a new browser windows will be open with the URL similar to this 'https://localhost:[Available_port]/swagger/index.html' where is API is running and can be access as well as the swagger index page will be open to test the API endpoints and get the documentation about this API for each of the endpoints.
 
 
-## Stack of NPM used in the project
+## Stack of Nuget Packages used in the project
 
 * Microsoft.VisualStudio.Azure.Containers.Tools.Targets version 1.22.1
 * FluentValidation.DependencyInjectionExtensions version 12.1.0
